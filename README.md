@@ -38,30 +38,98 @@ A curated list of awesome Cursor rules (.cursorrules) and MCP servers for AI-ass
 ## iOS & macOS
 *Focus on Swift, SwiftUI, Objective-C*
 
-- **SwiftUI Expert**: (推荐) 强制使用最新的 SwiftUI 语法，避免过时的 API。
-    ```markdown
-    // 这是一个示例，你可以在这里放简短的代码片段
-    You are an expert in Swift and SwiftUI.
-    Prefer value types (structs) over reference types (classes).
-    ```
-- **XCode Optimization**: 针对 XCode 调试的 AI 指令。
+- **SwiftUI Expert & Clean Architecture**:
+    * **Description**: Forces Cursor to use the latest Swift 5.9+ syntax, prioritize value types, and strictly follow MVVM pattern.
+    * **Rule Content**: [Copy from AgentIndex.app](https://agentindex.app) (Or use the snippet below)
+    * **.cursorrules Snippet**:
+      ```markdown
+      You are an expert iOS Developer proficient in Swift, SwiftUI, and Combine.
+      
+      - Always use `struct` over `class` unless you need reference semantics.
+      - Use `some View` for body types.
+      - Prefer `Async/Await` over completion handlers.
+      - Strictly follow MVVM: Views should only talk to ViewModels.
+      - For UI, always assume iOS 16+ unless specified otherwise.
+      - When using SF Symbols, ensure availability check.
+      ```
+
+- **XCode Build Fixer**: Helps debug obscure derived data and signing issues. [Get Rule](https://agentindex.app)
 
 ## Web Development
 *React, Vue, Next.js, Tailwind*
 
-- **Next.js 14 App Router**: 确保 AI 不会写出旧版 Page Router 的代码。
-- **Tailwind CSS Master**: 自动生成符合规范的 Class 组合。
+- **Next.js 14 App Router & SEO**:
+    * **Description**: Enforces modern Next.js 14+ conventions (App Router, Server Components) and SEO best practices.
+    * **.cursorrules Snippet**:
+      ```markdown
+      You are an expert in Next.js 14+, React, and TypeScript.
+      
+      - **App Router**: Always use the `app/` directory. Do not use the `pages/` directory.
+      - **Server Components**: All components are Server Components by default. Use `'use client'` only when necessary (e.g., hooks, event listeners).
+      - **Data Fetching**: Use standard `fetch` with async/await in Server Components. Avoid `useEffect` for data fetching.
+      - **Images**: Always use `next/image` with proper sizing and format (WebP).
+      - **Metadata**: Use the Metadata API for SEO tags, not `<head>`.
+      - **Filenames**: Use `page.tsx`, `layout.tsx`, `loading.tsx` conventions.
+      ```
+
+- **Tailwind CSS Master**:
+    * **Description**: Generates clean, responsive, and maintainable Tailwind utility classes.
+    * **.cursorrules Snippet**:
+      ```markdown
+      You are a Tailwind CSS expert.
+      
+      - **Utility First**: Use utility classes over custom CSS. Avoid `@apply` unless absolutely necessary.
+      - **Responsive Design**: Use mobile-first breakpoints (`sm:`, `md:`, `lg:`).
+      - **Sorting**: Order classes logically (Layout -> Box Model -> Typography -> Visuals).
+      - **Arbitrary Values**: Use `[]` for one-off values sparingly.
+      - **Colors**: Use semantic color names (e.g., `text-primary`, `bg-surface`) if defined, otherwise standard palette.
+      ```
 
 ## Python & AI
 *FastAPI, PyTorch, Django*
 
-- **Clean Python**: 符合 PEP8 规范的代码生成规则。
+- **Clean Python & PEP 8**:
+    * **Description**: Writes Pythonic code focusing on type safety, readability, and standard formatting.
+    * **.cursorrules Snippet**:
+      ```markdown
+      You are an expert Python developer.
+      
+      - **Style**: Strictly follow PEP 8 standards (indentation, snake_case for functions/vars).
+      - **Type Hinting**: Always use the `typing` module. Function signatures must have type hints.
+      - **Docstrings**: Use Google-style docstrings for all public functions and classes.
+      - **Modern Python**: Use `f-strings` for formatting. Use `pathlib` instead of `os.path`.
+      - **Error Handling**: Use specific exceptions (e.g., `ValueError`) instead of generic `Exception`.
+      ```
 
 ## MCP Servers
-*Model Context Protocol Integrations*
+*Model Context Protocol Integrations - Copy these configs to your `claude_desktop_config.json`*
 
-- **PostgreSQL Inspector**: 允许 AI 直接查询数据库结构。
-- **Git Commit Assistant**: 自动根据更改生成 Commit 信息。
+- **PostgreSQL Inspector**:
+    * **Description**: Give AI safe, read-only access to inspect your database schema and run queries to debug issues.
+    * **Config (JSON)**:
+      ```json
+      "postgres": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-postgres",
+          "postgresql://user:password@localhost:5432/your_db_name"
+        ]
+      }
+      ```
+
+- **Git Commit Assistant**:
+    * **Description**: Allows AI to read your `git diff` and `git status` to automatically generate semantic commit messages.
+    * **Config (JSON)**:
+      ```json
+      "git": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-git"
+        ]
+      }
+      ```
 
 ---
 
