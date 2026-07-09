@@ -1,5 +1,3 @@
-# awesome-cursor-rules
-A curated list of awesome Cursor rules (.cursorrules) and MCP servers for AI-assisted development. maintained by AgentIndex.app
 # Awesome Cursor Rules & MCP Servers
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
@@ -104,6 +102,8 @@ A curated list of awesome Cursor rules (.cursorrules) and MCP servers for AI-ass
 ## MCP Servers
 *Model Context Protocol Integrations - Copy these configs to your `claude_desktop_config.json`*
 
+Configs below use the standard `mcpServers` object shape. For remote endpoints, keep API keys in the provider dashboard or environment-backed client settings when the client supports them.
+
 - **PostgreSQL Inspector**:
     * **Description**: Give AI safe, read-only access to inspect your database schema and run queries to debug issues.
     * **Config (JSON)**:
@@ -127,6 +127,21 @@ A curated list of awesome Cursor rules (.cursorrules) and MCP servers for AI-ass
         "args": [
           "-y",
           "@modelcontextprotocol/server-git"
+        ]
+      }
+      ```
+
+- **Xquik MCP**:
+    * **Description**: Connect AI agents to X data, account workflows, and automation actions through Xquik's hosted MCP endpoint.
+    * **Compatibility**: Remote MCP endpoint via `mcp-remote`, suitable for Claude Desktop and other clients that can launch stdio bridge commands.
+    * **Config (JSON)**:
+      ```json
+      "xquik": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "mcp-remote@0.1.38",
+          "https://xquik.com/mcp"
         ]
       }
       ```
