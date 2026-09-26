@@ -132,6 +132,16 @@ A curated list of awesome Cursor rules (.cursorrules) and MCP servers for AI-ass
       ```
 
 ---
+- **Statsnet MCP**:
+    * **Description**: Background check any company in the world: registration, executives, courts and finances.
+    * **Repo**: [https://github.com/usenetstate/statsnet-mcp](https://github.com/usenetstate/statsnet-mcp)
+    * **Remote**: `https://statsnet.co/mcp`
+    * **Config (JSON)**:
+      ```json
+      "statsnet": {
+        "url": "https://statsnet.co/mcp"
+      }
+      ```
 
 ## Contributing
 
