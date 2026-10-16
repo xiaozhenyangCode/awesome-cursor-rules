@@ -18,6 +18,26 @@ A curated list of awesome Cursor rules (.cursorrules) and MCP servers for AI-ass
 
 *(We update the website daily with new agents and rules that aren't listed here yet!)*
 
+### 🤖 Search AgentIndex from your AI agent (MCP)
+
+Query the whole directory straight from Claude Code, Cursor or any MCP client. Remote server, no API key:
+
+```bash
+claude mcp add --transport http agentindex https://agentindex.app/api/mcp/
+```
+
+Cursor / other clients (`mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "agentindex": { "url": "https://agentindex.app/api/mcp/" }
+  }
+}
+```
+
+Tools: `search_tools`, `get_tool_detail`, `list_categories`, `get_trending`, `submit_tool`. Listed on the [official MCP Registry](https://registry.modelcontextprotocol.io) as `app.agentindex/agentindex` and on [Smithery](https://smithery.ai/servers/xiaozhenyangcode/agentindex).
+
 ---
 
 ## 📚 Contents
