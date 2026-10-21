@@ -36,6 +36,18 @@ Cursor / other clients (`mcp.json`):
 
 Tools: `search_tools`, `get_tool_detail`, `list_categories`, `get_trending`, `submit_tool`. Listed on the [official MCP Registry](https://registry.modelcontextprotocol.io) as `app.agentindex/agentindex` and on [Smithery](https://smithery.ai/servers/xiaozhenyangcode/agentindex).
 
+### 💻 Search AgentIndex from your terminal
+
+No install, no API key:
+
+```bash
+npx @agentindex-app/cli find "browser automation"
+npx @agentindex-app/cli tool prefecthq-fastmcp
+npx @agentindex-app/cli category
+```
+
+All commands and options: [@agentindex-app/cli on npm](https://www.npmjs.com/package/@agentindex-app/cli).
+
 ---
 
 ## 📚 Contents
