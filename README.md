@@ -1,5 +1,3 @@
-# awesome-cursor-rules
-A curated list of awesome Cursor rules (.cursorrules) and MCP servers for AI-assisted development. maintained by AgentIndex.app
 # Awesome Cursor Rules & MCP Servers
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
@@ -48,6 +46,7 @@ Tools: `search_tools`, `get_tool_detail`, `list_categories`, `get_trending`, `su
 - [Python & AI](#python--ai)
 - [MCP Servers](#mcp-servers)
 - [Contributing](#contributing)
+- [License](#license)
 
 ## General Rules
 *通用规则，适用于大多数项目*
@@ -155,7 +154,7 @@ Tools: `search_tools`, `get_tool_detail`, `list_categories`, `get_trending`, `su
 
 ## Contributing
 
-We love contributions!
+We love contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first, then:
 1. Fork this repo.
 2. Create a branch (`git checkout -b add-new-rule`).
 3. Commit your changes.
@@ -163,3 +162,9 @@ We love contributions!
 5. Create a **Pull Request**.
 
 **Or simply submit your Agent/Rule directly at [AgentIndex.app](https://agentindex.app) for faster listing!**
+
+## License
+
+[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+To the extent possible under law, the contributors have waived all copyright and related rights to this list. See [LICENSE](LICENSE).
